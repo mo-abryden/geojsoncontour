@@ -17,7 +17,7 @@ def contour_to_geojson(contour, geojson_filepath=None, min_angle_deg=None,
     line_features = []
     for collection in collections:
         color = collection.get_edgecolor()
-        for path in collection.get_paths():
+        for path in contour.allsegs[contour_index]:
             v = path.vertices
             if len(v) < 3:
                 continue
